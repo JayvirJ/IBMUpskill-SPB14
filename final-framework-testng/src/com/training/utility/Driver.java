@@ -8,9 +8,9 @@ public interface Driver {
 	String PHANTOM="phantomjs.binary.path";
 	
 	// PATH 
-	String CHROME_PATH="C:\\OnlineTraining\\SDET Oct 2018\\dependencies\\chromedriver.exe";
-	String FIREFOX_PATH ="";
-	String IE_PATH ="";
+	String CHROME_PATH="C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Selenium Configuration\\Extracts\\chromedriver.exe";
+	String FIREFOX_PATH ="C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Selenium Configuration\\Extracts\\geckodriver.exe";
+	String IE_PATH ="C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Selenium Configuration\\Extracts\\IEDriverServer.exe";
 	String PHANTOM_PATH="";
 	
 }
