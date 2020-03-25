@@ -1,5 +1,6 @@
 package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,11 +14,33 @@ public class HomePOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(className="fa-user")
+//Project eLearning	
+	//To locate and click on 'Sign Up!' link,
+	@FindBy(linkText="Sign up!")			
+	private WebElement SignUp_link;
+	
+	public void clickSignUp() {
+		this.SignUp_link.click();
+	}
+	
+	//To locate and click on Edit Profile link,
+	@FindBy(linkText="Edit profile")
+	private WebElement EditProfile;
+	
+	public void ClickEditProfile() {
+		this.EditProfile.click();
+	}
+	
+
+
+//For Magento test
+	@FindBy(className="fa-user")			
 	private WebElement user_icon; 
 	
 	public void clickUserIcon() {
 		this.user_icon.click();
 	}
+	
+	
 	
 }

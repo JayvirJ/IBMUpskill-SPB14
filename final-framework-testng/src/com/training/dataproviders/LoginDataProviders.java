@@ -32,13 +32,25 @@ public class LoginDataProviders {
 	
 	@DataProvider(name = "excel-inputs")
 	public Object[][] getExcelData(){
-		String fileName ="C:/Users/Naveen/Desktop/Testing.xlsx"; 
-		return new ApachePOIExcelRead().getExcelContent(fileName); 
+		String fileName ="C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Selenium\\TestingData.xls"; 
+		return new ApachePOIExcelRead().getExcelContent(fileName);    		// ApachePOI to be used when reading from .xlsx file
 	}
 	
 	@DataProvider(name = "xls-inputs")
 	public Object[][] getXLSData(){
 		// ensure you will have the title as first line in the file 
-		return new ReadExcel().getExcelData("C:/Users/Naveen/Desktop/Testing.xls", "Sheet1"); 
-	}
+		return new ReadExcel().getExcelData("C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Selenium\\TestingData.xls", "Sheet1"); 
+	}																		// ReadExcel to be used when reading from .xls file
+	
+	@DataProvider(name = "loginData")
+	public Object[][] loginData(){
+		//String fileName ="C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Selenium\\TestingData.xls"; 
+		return new ReadExcel().getExcelData("C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Selenium\\TestingData.xls", "Sheet1");
+		}
+	
+	@DataProvider(name = "TD61_StRegistration")
+	public Object[][] TD61_StRegistration(){
+		//String fileName ="C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Selenium\\TestingData.xls"; 
+		return new ReadExcel().getExcelData("C:\\Users\\JayvirsinhJethwa\\Desktop\\IBM Upskill\\Project\\ELTD_061.xls", "Sheet1");
+		}
 }

@@ -15,6 +15,7 @@ import com.training.bean.LoginBean;
 import com.training.dao.ELearningDAO;
 import com.training.dataproviders.LoginDataProviders;
 import com.training.generics.ScreenShot;
+import com.training.pom.HomePOM;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
@@ -23,6 +24,7 @@ public class LoginExcelTest {
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
+	private HomePOM homePOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -36,8 +38,9 @@ public class LoginExcelTest {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		homePOM = new HomePOM(driver);
 		loginPOM = new LoginPOM(driver);
-		baseUrl = properties.getProperty("baseURL");
+		baseUrl = properties.getProperty("baseUrl");
 		screenShot = new ScreenShot(driver);
 		// open the browser
 		driver.get(baseUrl);
@@ -48,12 +51,20 @@ public class LoginExcelTest {
 		driver.quit();
 	}
 
-	@Test(dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
+//	@Test(dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
+//	public void loginDBTest(String userName, String password) {
+//		loginPOM.sendUserName(userName);
+//		loginPOM.sendPassword(password);
+//		loginPOM.clickLoginBtn();
+//		screenShot.captureScreenShot(userName);
+	
+	@Test(dataProvider = "loginData", dataProviderClass = LoginDataProviders.class)
 	public void loginDBTest(String userName, String password) {
+		homePOM.clickUserIcon();
 		loginPOM.sendUserName(userName);
 		loginPOM.sendPassword(password);
 		loginPOM.clickLoginBtn();
-		screenShot.captureScreenShot(userName);
+		screenShot.captureScreenShot("testDP");
 
 	}
 

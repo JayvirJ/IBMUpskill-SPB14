@@ -13,7 +13,44 @@ public class LoginPOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="email")
+	
+//Project eLearning	
+	@FindBy(id="login")
+	private WebElement uName; 
+	
+	public void sendUName(String username) {
+		this.uName.clear();
+		this.uName.sendKeys(username);
+	}
+	
+	
+	@FindBy(id="password")
+	private WebElement pwd;
+	
+	public void sendPWD(String password) {
+		this.pwd.clear();
+		this.pwd.sendKeys(password);
+	}
+	
+	@FindBy(name="submitAuth")
+	private WebElement login; 
+	
+	public void clickLogin() {
+		this.login.click(); 
+	}
+		
+	
+	@FindBy(linkText="Homepage")
+	private WebElement homepage;
+	
+	public void clickHomepage() {
+		this.homepage.click(); 
+	}
+	
+	
+	
+//For Magento test
+	@FindBy(id="email")							
 	private WebElement userName; 
 	
 	@FindBy(id="pass")
@@ -35,4 +72,6 @@ public class LoginPOM {
 	public void clickLoginBtn() {
 		this.loginBtn.click(); 
 	}
+	
+	
 }
