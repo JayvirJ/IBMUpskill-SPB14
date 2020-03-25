@@ -83,7 +83,7 @@ public class ELTC031_Medium {
 		myCoursePOM.sendIntro("this is an API course");
 		
 		//Step 10: Click on Save intro text,
-		//myCoursePOM.clickSaveIntroBtn();
+		myCoursePOM.clickSaveIntroBtn();
 		
 		
 		screenShot.captureScreenShot("ELTC031_CreateCourse");
